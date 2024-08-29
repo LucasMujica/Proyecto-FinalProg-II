@@ -2,6 +2,7 @@
     display: flex;
     background: #F17D7D;
     flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .menu {
@@ -11,7 +12,7 @@
     list-style-type: none;
 }
 
-.menu_itens {
+.menu_items {
     margin: 1em;
 }
 
