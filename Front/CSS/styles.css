@@ -26,7 +26,6 @@ h1 {display: flex;
     margin: 1em;
 }
 
-<<<<<<< Updated upstream
 table {
     border: 0.2em solid black;
     border-collapse: collapse;
@@ -39,7 +38,6 @@ th, tr {
 }
 
 
-=======
 .cotizaciones {
     border: 0.2em solid black;
 }
@@ -48,7 +46,6 @@ th, tr {
     border: 0.2em solid black;
 }
 
->>>>>>> Stashed changes
 .grupo {
     display: flex;
     flex-direction: column;
