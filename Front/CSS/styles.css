@@ -1,3 +1,10 @@
+html {background:#E13333;}
+
+h1 {display: flex;
+    font-size: 3.5em;
+    flex-direction: row;
+    justify-content: center;}
+
 .menu_container {
     display: flex;
     background: #F17D7D;
@@ -10,10 +17,12 @@
     flex-direction: row;
     align-items: stretch;
     list-style-type: none;
+    background: #F17D7D;
 }
 
 .menu_items {
     margin: 1em;
+    background: #F17D7D;
 }
 
 .grupo {
