@@ -1,5 +1,6 @@
 .menu_container {
     display: flex;
+    background: #F17D7D;
     flex-direction: row;
 }
 
