@@ -10,6 +10,10 @@
     list-style-type: none;
 }
 
+.menu_itens {
+    margin: 1em;
+}
+
 .grupo {
     display: flex;
     flex-direction: column;
