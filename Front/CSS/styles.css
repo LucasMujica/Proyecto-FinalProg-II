@@ -3,6 +3,13 @@
     flex-direction: row;
 }
 
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    list-style-type: none;
+}
+
 .grupo {
     display: flex;
     flex-direction: column;
