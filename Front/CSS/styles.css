@@ -1,3 +1,5 @@
+*{font-family: sans-serif;}
+
 html {background:#E13333;}
 
 h1 {display: flex;
@@ -22,7 +24,6 @@ h1 {display: flex;
 
 .menu_items {
     margin: 1em;
-    background: #F17D7D;
 }
 
 <<<<<<< Updated upstream
@@ -53,3 +54,5 @@ th, tr {
     flex-direction: column;
     align-items: center;
 }
+
+a {color: black;}
