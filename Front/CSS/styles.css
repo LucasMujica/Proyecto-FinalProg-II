@@ -25,6 +25,18 @@ h1 {display: flex;
     background: #F17D7D;
 }
 
+table {
+    border: 0.2em solid black;
+    border-collapse: collapse;
+}
+
+th, tr {
+    border: 0.1em solid black;
+    margin: 0.1em;
+    padding: 0.1em;
+}
+
+
 .grupo {
     display: flex;
     flex-direction: column;
