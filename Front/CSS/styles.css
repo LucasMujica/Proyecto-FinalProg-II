@@ -26,15 +26,14 @@ h1 {display: flex;
     margin: 1em;
 }
 
-table {
-    border: 0.2em solid black;
+.cotizaciones {
+    border: 0.1em solid black;
     border-collapse: collapse;
 }
 
-th, tr {
-    border: 0.1em solid black;
-    margin: 0.1em;
-    padding: 0.1em;
+.cotizaciones_columnas, .cotizaciones_filas {
+   margin: 0.1em;
+   padding: 0.1em;
 }
 
 
