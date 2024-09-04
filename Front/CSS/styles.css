@@ -35,7 +35,8 @@ h1 {display: flex;
 }
 
 .menu_items {
-    margin: 1em;
+    margin: 0.5em;
+    text-decoration: none;
 }
 
 .cotizaciones {
