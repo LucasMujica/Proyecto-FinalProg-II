@@ -1,6 +1,14 @@
 *{font-family: sans-serif;}
 
-html {background:#E13333;}
+html {background:#fce5e5;}
+
+.encabezado{
+    background-color: #e33c3c;
+    margin: auto;
+    padding-top: 1em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+}
 
 h1 {display: flex;
     font-size: 3.5em;
@@ -10,6 +18,10 @@ h1 {display: flex;
 .menu_container {
     display: flex;
     background: #F17D7D;
+    background-size: contain;
+    margin: auto;
+    padding-right: 1em;
+    padding-left: 1em;
     flex-direction: row;
     justify-content: space-evenly;
 }
@@ -27,8 +39,13 @@ h1 {display: flex;
 }
 
 .cotizaciones {
-    border: 0.1em solid black;
+    border: 0.05em #070202;
     border-collapse: collapse;
+}
+
+.cotizaciones_encabezado {
+    background-color: #c53636;
+    color: #fce5e5;
 }
 
 .cotizaciones_columnas, .cotizaciones_filas {
