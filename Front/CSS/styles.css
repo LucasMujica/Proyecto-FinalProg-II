@@ -35,7 +35,10 @@ h1 {display: flex;
 }
 
 .menu_items {
-    margin: 0.5em;
+    margin: 1em;
+}
+
+.menu_items a{
     text-decoration: none;
 }
 
