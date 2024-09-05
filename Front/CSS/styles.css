@@ -42,6 +42,10 @@ h1 {display: flex;
     text-decoration: none;
 }
 
+.menu_items a:hover {
+    color: #fce5e5;
+}
+
 .cotizaciones {
     border: 0.05em #070202;
     border-collapse: collapse;
@@ -73,3 +77,67 @@ h1 {display: flex;
 }
 
 a {color: black;}
+
+/*Estilos de la página de Contavto*/
+
+.coontainer_conacto{
+    display: flex;
+    align-items: baseline;
+    justify-content: baseline;
+}
+
+.titulo_contacto{
+    display: flex;
+    justify-content: baseline;
+    color: #070202;
+    margin-left: 0.6em;
+    margin-bottom: 1px;
+}
+
+.formulario{
+    display: flex;
+    justify-content: baseline;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-left: 0;
+    width: 4em;
+    padding: 1em;
+}
+
+.formulario label{
+    display:flex;
+    flex-direction:column;
+    width: 90px;
+}
+
+.nombre, .email{
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    box-sizing: border-box;
+    border: 1px solid #dcd0d0;
+}
+
+
+.mensaje{
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    box-sizing: border-box;
+    border: 1px solid #dcd0d0;
+}
+
+.boton_enviar{
+    margin-top: 9px;
+    padding: 2px;
+    color: #fce5e5;
+    background-color: #c53636;
+    border: none;
+}
+
+.boton_enviar:hover{
+    background-color: #070202;
+    border: 1px solid #dcd0d0;
+}
+
+
