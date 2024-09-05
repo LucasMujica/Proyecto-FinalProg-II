@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<htmlA lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +20,18 @@
         </div>
       </header>
       <main>
-        <h2>Contactanos ahora</h2>
-
+        <section class="contacto_container">
+            <h2 class="titulo_contacto">Contactanos ahora</h2>
+            <form class="formulario" action="xd">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="user_name" class="nombre" required>
+                <label for="mail">E-mail</label>
+                <input type="mail" id="mail" name="user_mail" class="email" required placeholder="email@dominio.com">
+                <label for="msg">Mensaje</label>
+                <textarea name="user_message" id="msg" class="mensaje" required></textarea>
+                <button type="submit" class="boton_enviar">Enviar</button>
+            </form>
+        </section>
       </main>
 </body>
-</html>
+</htmlA
