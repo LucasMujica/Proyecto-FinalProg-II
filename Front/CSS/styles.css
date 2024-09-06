@@ -44,6 +44,7 @@ h1 {display: flex;
 
 .menu_items a:hover {
     color: #fce5e5;
+    cursor: pointer;
 }
 
 .cotizaciones {
@@ -91,7 +92,7 @@ a {color: black;}
     justify-content: baseline;
     color: #070202;
     margin-left: 0.6em;
-    margin-bottom: 1px;
+    margin-bottom: 0.5px;
 }
 
 .formulario{
@@ -127,6 +128,11 @@ a {color: black;}
     border: 1px solid #dcd0d0;
 }
 
+
+.nombre:hover, .email:hover, .mensaje:hover{
+    border:1px solid #e33c3c;
+}
+
 .boton_enviar{
     margin-top: 9px;
     padding: 2px;
@@ -138,6 +144,7 @@ a {color: black;}
 .boton_enviar:hover{
     background-color: #070202;
     border: 1px solid #dcd0d0;
+    cursor: pointer;
 }
 
 
