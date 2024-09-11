@@ -1,46 +1,46 @@
-*{font-family: sans-serif;}
+*{
+    font-family: sans-serif;
+}
 
 
 html {
     background: linear-gradient(to top, #1b2a2e, 70%, #207084);
-    background-size: cover;
     background-repeat: no-repeat;
+    box-sizing: border-box;
 }
 
+*, *::before, *::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
 
 .encabezado{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     background-color: #3d5a61;
     margin: auto;
     padding-top: 0.5em;
 }
 
 .titulo_pagina {
-    display: flex;
-    flex-direction: column;
-    color: #08a1e8;
+    color: #aad7ec;
     font-size: 2.5em;
-    flex-direction: row;
-    justify-content: center;
 }
 
 .menu_container {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     background: #3d5a61;
-    background-size: contain;
-    margin: auto;
-    padding-right: 1em;
-    padding-left: 1em;
-    flex-direction: row;
-    justify-content: space-evenly;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .menu {
     display: flex;
     flex-direction: row;
-    align-items: stretch;
     list-style-type: none;
     background: #3d5a61
 }
@@ -53,10 +53,11 @@ html {
 
 .menu_items a{
     text-decoration: none;
+    font-family: 'Arsenal SC', sans-serif;
 }
 
 .menu_items a:hover {
-    color: #47bbf1;
+    color: #08a1e8;
     cursor: pointer;
 }
 
@@ -67,6 +68,7 @@ html {
     align-items: flex-start;
     height: 100vh;
     margin-left: 1em;
+    margin-top: 1em;
 }
 
 .cotizaciones_titulo_container{
@@ -75,6 +77,7 @@ html {
     align-items: flex-start;
     margin-left: 0;
     color: #ebf5fb;
+    margin-bottom: 0.5em;
 }
 
 .home_titulo{
@@ -138,6 +141,7 @@ a {color: #ebf5fb;}
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    margin-top: 1em;
 }
 
 .titulo_contacto_container{
@@ -145,12 +149,12 @@ a {color: #ebf5fb;}
     flex-direction: column;
     align-items: flex-start;
     margin-left: 0;
+    margin-bottom: 0.5em;
 }
 
 .titulo_contacto{
     color: #ebf5fb;
     margin-left: 0.6em;
-    margin-bottom: 0.5px;
 }
 
 .formulario{
