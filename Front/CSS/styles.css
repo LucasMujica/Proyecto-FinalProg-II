@@ -1,23 +1,29 @@
 *{font-family: sans-serif;}
 
-html {background:#fce5e5;}
+
+html {
+    background: linear-gradient(to top, #023e4d, 70%, #008085);
+}
 
 .encabezado{
-    background-color: #e33c3c;
+    background-color: #8bc4d37c;
     margin: auto;
     padding-top: 1em;
     padding-right: 0.5em;
     padding-left: 0.5em;
 }
 
-h1 {display: flex;
+h1 {
+    display: flex;
+    color: #08a1e8;
     font-size: 3.5em;
     flex-direction: row;
-    justify-content: center;}
+    justify-content: center;
+}
 
 .menu_container {
     display: flex;
-    background: #F17D7D;
+    background: #8bc4d37c;
     background-size: contain;
     margin: auto;
     padding-right: 1em;
@@ -31,11 +37,12 @@ h1 {display: flex;
     flex-direction: row;
     align-items: stretch;
     list-style-type: none;
-    background: #F17D7D;
+    background: #8bc4d37c;
 }
 
 .menu_items {
     margin: 1em;
+    color: #ebf5fb;
 }
 
 .menu_items a{
@@ -43,7 +50,7 @@ h1 {display: flex;
 }
 
 .menu_items a:hover {
-    color: #fce5e5;
+    color: #47bbf1;
     cursor: pointer;
 }
 
@@ -64,7 +71,7 @@ h1 {display: flex;
 }
 
 .home_titulo{
-    color: #070202;
+    color: #ebf5fb;
 }
 
 .cotizaciones_container{
@@ -83,15 +90,19 @@ h1 {display: flex;
 .cotizaciones_encabezado {
     margin: 0.1em;
     padding: 0.1em;
-    border: 2px solid #070202;
-    background-color: #c53636;
-    color: #fce5e5;
+    border: 2px solid #ebf5fb;
+    background-color: #08a1e8;
+    color: #ebf5fb;
 }
 
 .cotizaciones_columnas, .cotizaciones_filas {
    margin: 0.1em;
    padding: 0.1em;
-   border: 2px solid #070202;
+   border: 2px solid #ebf5fb;
+}
+
+.pie_de_pagina{
+    background-color: #00000095;
 }
 
 .grupo {
@@ -100,7 +111,7 @@ h1 {display: flex;
     align-items: center;
 }
 
-a {color: black;}
+a {color: #ebf5fb;}
 
 /*Estilos de la página de Contavto*/
 
@@ -108,8 +119,7 @@ a {color: black;}
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    
-
+    margin: auto;
 }
 
 .titulo_contacto{
