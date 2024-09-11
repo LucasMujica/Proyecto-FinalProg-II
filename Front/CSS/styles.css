@@ -2,28 +2,33 @@
 
 
 html {
-    background: linear-gradient(to top, #023e4d, 70%, #008085);
+    background: linear-gradient(to top, #1b2a2e, 70%, #207084);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
 
 .encabezado{
-    background-color: #8bc4d37c;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #3d5a61;
     margin: auto;
-    padding-top: 1em;
-    padding-right: 0.5em;
-    padding-left: 0.5em;
+    padding-top: 0.5em;
 }
 
-h1 {
+.titulo_pagina {
     display: flex;
+    flex-direction: column;
     color: #08a1e8;
-    font-size: 3.5em;
+    font-size: 2.5em;
     flex-direction: row;
     justify-content: center;
 }
 
 .menu_container {
     display: flex;
-    background: #8bc4d37c;
+    background: #3d5a61;
     background-size: contain;
     margin: auto;
     padding-right: 1em;
@@ -37,8 +42,9 @@ h1 {
     flex-direction: row;
     align-items: stretch;
     list-style-type: none;
-    background: #8bc4d37c;
+    background: #3d5a61
 }
+
 
 .menu_items {
     margin: 1em;
@@ -68,6 +74,7 @@ h1 {
     flex-direction: column;
     align-items: flex-start;
     margin-left: 0;
+    color: #ebf5fb;
 }
 
 .home_titulo{
@@ -83,22 +90,24 @@ h1 {
 
 .cotizaciones {
     width: auto;
-    max-width: 400px; 
+    max-width: 400px;
+    border-top-left-radius: 0.5em 1em; 
     border-collapse: collapse;
 }
 
 .cotizaciones_encabezado {
     margin: 0.1em;
     padding: 0.1em;
-    border: 2px solid #ebf5fb;
-    background-color: #08a1e8;
+    border: 2px solid #0674a7;
+    background-color: #0674a7;
     color: #ebf5fb;
 }
 
 .cotizaciones_columnas, .cotizaciones_filas {
+   color: #ebf5fb; 
    margin: 0.1em;
    padding: 0.1em;
-   border: 2px solid #ebf5fb;
+   border: 0.5px solid #ebf5fb;
 }
 
 .pie_de_pagina{
@@ -109,34 +118,48 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #ebf5fb;
 }
 
 a {color: #ebf5fb;}
 
 /*Estilos de la página de Contavto*/
-
-.coontainer_conacto{
+.contacto {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    margin-left: 1em;
+}
+
+.contacto_container{
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    margin: auto;
+}
+
+.titulo_contacto_container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
 }
 
 .titulo_contacto{
-    display: flex;
-    justify-content: baseline;
-    color: #070202;
+    color: #ebf5fb;
     margin-left: 0.6em;
     margin-bottom: 0.5px;
 }
 
 .formulario{
     display: flex;
-    justify-content: baseline;
     flex-direction: column;
-    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: flex-start;
     margin-left: 0;
-    width: 4em;
+    width: 100%;
     padding: 1em;
 }
 
@@ -144,6 +167,7 @@ a {color: #ebf5fb;}
     display:flex;
     flex-direction:column;
     width: 90px;
+    color: #ebf5fb;
 }
 
 .nombre, .email{
@@ -151,6 +175,7 @@ a {color: #ebf5fb;}
     flex-direction: column;
     width: 20em;
     box-sizing: border-box;
+    background-color: #33444e91;
     border: 1px solid #dcd0d0;
 }
 
@@ -160,25 +185,33 @@ a {color: #ebf5fb;}
     flex-direction: column;
     width: 20em;
     box-sizing: border-box;
+    background-color: #33444e91;
     border: 1px solid #dcd0d0;
 }
 
 
 .nombre:hover, .email:hover, .mensaje:hover{
-    border:1px solid #e33c3c;
+    border:1px solid #08a1e8;
+}
+
+.nombre:focus, .email:focus, .mensaje:focus{
+    color: #ebf5fb;
 }
 
 .boton_enviar{
     margin-top: 9px;
-    padding: 2px;
-    color: #fce5e5;
-    background-color: #c53636;
+    padding: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: #ebf5fb;
+    background-color: #0674a7;
     border: none;
+    border-radius: 0.2em;
 }
 
 .boton_enviar:hover{
-    background-color: #070202;
-    border: 1px solid #dcd0d0;
+    background-color: #00000095;
+    border: 1px solid #ebf5fb;
     cursor: pointer;
 }
 
