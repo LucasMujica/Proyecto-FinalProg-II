@@ -9,7 +9,7 @@
 <body>
     <header class="encabezado">
         <div>
-          <h1>Cotizaciones BAZINGA</h1>
+          <h1 class="titulo_pagina">Cotizaciones BAZINGA</h1>
           <nav class="menu_container">
             <ul class="menu">
               <li class="menu_items"><a href="index.html">Home</a></li>
@@ -19,16 +19,18 @@
           </nav>
         </div>
       </header>
-      <main>
+      <main class="contacto">
         <section class="contacto_container">
+          <div class="titulo_contacto_container">
             <h2 class="titulo_contacto">Contactanos ahora</h2>
+          </div>
             <form class="formulario" action="xd">
                 <label for="name">Nombre</label>
                 <input type="text" id="name" name="user_name" class="nombre" required>
                 <label for="mail">E-mail</label>
                 <input type="mail" id="mail" name="user_mail" class="email" required placeholder="email@dominio.com">
                 <label for="msg">Mensaje</label>
-                <textarea name="user_message" id="msg" class="mensaje" required></textarea>
+                <textarea name="user_message" id="msg" class="mensaje" required placeholder="Escribí un mensaje..."></textarea>
                 <button type="submit" class="boton_enviar">Enviar</button>
             </form>
         </section>
