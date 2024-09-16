@@ -31,7 +31,7 @@ html {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background: #3d5a61;
+    background: #2b4247;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 10px;
@@ -42,7 +42,7 @@ html {
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    background: #3d5a61
+    background: #2b4247;
 }
 
 
