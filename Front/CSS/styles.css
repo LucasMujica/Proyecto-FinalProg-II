@@ -98,8 +98,7 @@ html {
 .cotizaciones {
     width: auto;
     max-width: 400px;
-    border-top-left-radius: 0.5em 1em; 
-    border-collapse: collapse;
+    border-collapse: separate;
 }
 
 .cotizaciones_encabezado {
