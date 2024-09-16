@@ -105,16 +105,24 @@ html {
 .cotizaciones_encabezado {
     margin: 0.1em;
     padding: 0.1em;
-    border: 2px solid #0674a7;
-    background-color: #0674a7;
+    border: 2px solid #2b4247;
+    background-color: #2b4247;
     color: #ebf5fb;
 }
 
-.cotizaciones_columnas, .cotizaciones_filas {
+.cotizaciones_columnas  {
    color: #ebf5fb; 
    margin: 0.1em;
    padding: 0.1em;
-   border: 0.5px solid #ebf5fb;
+   border: 0.5px solid #2b4247;
+}
+
+.cotizaciones_filas {
+    color: #ebf5fb; 
+    margin: 0.1em;
+    padding: 0.1em;
+    border: 2px solid #2b4247;
+    background-color: #4c6f76;
 }
 
 .pie_de_pagina{
