@@ -214,6 +214,7 @@ a {color: #ebf5fb;}
 }
 
 .boton_enviar{
+    font-size: 1.2em;
     margin-top: 9px;
     padding: 3px;
     padding-left: 4px;
@@ -222,6 +223,7 @@ a {color: #ebf5fb;}
     background-color: #0674a7;
     border: none;
     border-radius: 0.2em;
+    transition: background-color 2s, border 2s;
 }
 
 .boton_enviar:hover{
