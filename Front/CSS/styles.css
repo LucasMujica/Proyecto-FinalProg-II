@@ -21,7 +21,11 @@ html {
     padding-top: 0.5em;
 }
 
-.titulo_pagina {
+.logo_container{
+    display: flex;
+}
+
+.logo {
     color: #aad7ec;
     font-size: 2.5em;
 }
