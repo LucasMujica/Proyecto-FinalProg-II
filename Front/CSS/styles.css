@@ -127,7 +127,9 @@ html {
 
 .pie_de_pagina{
     display: flex;
+    justify-content: space-between;
     background-color: #00000095;
+    margin: auto;
 }
 
 .info_utn{
@@ -137,7 +139,6 @@ html {
 .grupo {
     display: flex;
     flex-direction: column;
-    align-items: center;
     color: #ebf5fb;
 }
 
