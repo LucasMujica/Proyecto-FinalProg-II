@@ -2,7 +2,6 @@
     font-family: sans-serif;
 }
 
-
 html {
     background: linear-gradient(to top, #1b2a2e, 70%, #207084);
     background-repeat: no-repeat;
@@ -16,6 +15,8 @@ html {
 }
 
 .encabezado{
+    position: sticky;
+    top: 0;
     background-color: #2b4247;
     margin: auto;
     padding-top: 0.5em;
