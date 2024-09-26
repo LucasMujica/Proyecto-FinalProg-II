@@ -126,7 +126,12 @@ html {
 }
 
 .pie_de_pagina{
+    display: flex;
     background-color: #00000095;
+}
+
+.info_utn{
+    color: #ebf5fb;
 }
 
 .grupo {
