@@ -169,11 +169,21 @@ html {
     align-items: center;
 }
 
+.grupo_titulo{
+    color: #ebf5fb;
+    text-decoration: solid;
+    margin: 0;
+    padding-bottom: 0.5em;
+    font-size: 1.2em;
+}
+
 .grupo_integrantes{
     list-style: none;
     margin: 0;
     padding: 0;
 }
+
+.grupo_integrantes{}
 
 a {color: #ebf5fb;}
 
