@@ -128,21 +128,59 @@ html {
 .pie_de_pagina{
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     background-color: #00000095;
     margin: auto;
+    padding: 1em;
 }
 
 .info_utn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 60%;
+}
+
+.logo_utn{
+    width: 200px;
+    height: 45px;
+}
+
+.datos_utn{
     color: #ebf5fb;
+}
+
+.links_md{
+    display: flex;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.links_md a {
+    color: #ebf5fb;
+    font-size: 1.5em;
 }
 
 .grupo {
     display: flex;
     flex-direction: column;
+    max-width: 35%;
     color: #ebf5fb;
+    align-items: center;
+}
+
+.grupo_integrantes{
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {color: #ebf5fb;}
+
+/*Estilos de la página Historico*/
+.historico_container{
+    height: 100vh;
+}
 
 /*Estilos de la página de Contavto*/
 .contacto {
