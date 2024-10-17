@@ -4,6 +4,33 @@ fetch("https://dolarapi.com/v1/dolares")
     .then(response => response.json())
     .then(data => { dolarApi = data }); */
 
+const DOLAR_API = "https://dolarapi.com/v1/dolares";
+
+function obtenerCotizaciones(){
+    fetch(DOLAR_API)
+    .then(response => response.json())
+    .then(data => {
+        const TABLA = document.getElementById('tabla-cotizacionES').getElementsByTagName('tbody')[0];
+        const MONEDAS = data.monedas; 
+
+        MONEDAS.forEach(monedaData => {
+            const FILA = TABLA.insertRow();
+            const CELDA_MONEDA = FILA.insertCell(0);
+            const CELDA_COMPRA = FILA.insertCell(1);
+            const CELDA_VENTA = FILA.insertCell(2);
+
+            // Asignar los datos de moneda, compra y venta
+            CELDA_MONEDA.textContent = monedaData.moneda;
+            CELDA_COMPRA.textContent = monedaData.compra;
+            CELDA_VENTA.textContent = monedaData.venta;
+        });
+    })
+    .catch(error => console.error('Error al obtener los datos:', error));
+
+}
+
+document.addEventListener('DOMContentLoaded', obtenerCotizacionES);
+
 //INICIO Inyectar Header//
 const header = document.createElement('header');
 header.classList.add('encabezado');
