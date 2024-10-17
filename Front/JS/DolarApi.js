@@ -6,9 +6,6 @@ function obtenerCotizaciones() {
     .then(data => {
         console.log(data); 
         const tabla = document.getElementById('tabla-cotizaciones').getElementsByTagName('tbody')[0];
-        
-
-        tabla.innerHTML = '';
 
         data.forEach(monedaData => {
             const fila = tabla.insertRow();
