@@ -1,35 +1,35 @@
-/* var dolarApi
-
-fetch("https://dolarapi.com/v1/dolares")
-    .then(response => response.json())
-    .then(data => { dolarApi = data }); */
-
 const DOLAR_API = "https://dolarapi.com/v1/dolares";
 
-function obtenerCotizaciones(){
+function obtenerCotizaciones() {
     fetch(DOLAR_API)
     .then(response => response.json())
     .then(data => {
-        const TABLA = document.getElementById('tabla-cotizacionES').getElementsByTagName('tbody')[0];
-        const MONEDAS = data.monedas; 
+        console.log(data); 
+        const tabla = document.getElementById('tabla-cotizaciones').getElementsByTagName('tbody')[0];
+        
 
-        MONEDAS.forEach(monedaData => {
-            const FILA = TABLA.insertRow();
-            const CELDA_MONEDA = FILA.insertCell(0);
-            const CELDA_COMPRA = FILA.insertCell(1);
-            const CELDA_VENTA = FILA.insertCell(2);
+        tabla.innerHTML = '';
 
-            // Asignar los datos de moneda, compra y venta
-            CELDA_MONEDA.textContent = monedaData.moneda;
-            CELDA_COMPRA.textContent = monedaData.compra;
-            CELDA_VENTA.textContent = monedaData.venta;
+        data.forEach(monedaData => {
+            const fila = tabla.insertRow();
+            fila.classList.add('cotizaciones_filas');
+            const celdaMoneda = fila.insertCell(0);
+            celdaMoneda.textContent = monedaData.nombre;
+            celdaMoneda.classList.add('cotizaciones_columnas'); 
+            const celdaCompra = fila.insertCell(1);
+            celdaCompra.textContent = monedaData.compra;
+            celdaCompra.classList.add('cotizaciones_columnas'); 
+
+            const celdaVenta = fila.insertCell(2);
+            celdaVenta.textContent = monedaData.venta;
+            celdaVenta.classList.add('cotizaciones_columnas'); 
         });
     })
     .catch(error => console.error('Error al obtener los datos:', error));
-
 }
 
-document.addEventListener('DOMContentLoaded', obtenerCotizacionES);
+
+document.addEventListener('DOMContentLoaded', obtenerCotizaciones);
 
 //INICIO Inyectar Header//
 const header = document.createElement('header');
