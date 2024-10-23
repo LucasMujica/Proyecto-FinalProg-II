@@ -131,7 +131,7 @@ html {
     align-items: flex-start;
     background-color: #00000095;
     margin: auto;
-    padding: 5em;
+    padding: 1em;
 }
 
 .info_utn{
@@ -168,6 +168,7 @@ html {
     justify-content: flex-start;
     max-width: 35%;
     color: #ebf5fb;
+    padding-right: 0.5em;
 }
 
 .grupo_titulo{
