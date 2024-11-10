@@ -41,8 +41,17 @@ logoContainer.classList.add('logo_container');
 
 const logo = document.createElement('h1');
 logo.classList.add('logo');
-logo.textContent = 'Cotizaciones BAZINGA';
+logo.textContent = 'Cotizaciones Cafe';
+
+const logoimg1 = document.createElement('img');
+logoimg1.src='images/logo_header.png';
+logoimg1.alt = 'Cotizaciones Cafe';
+logoimg1.classList.add('imagen_encabezado');
+
+logo.appendChild(logoimg1);
+
 logoContainer.appendChild(logo);
+
 
 const ulMenu = document.createElement('ul');
 ulMenu.classList.add('menu');
@@ -86,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //Acá se crea el contenedor donde esta el logo de la facultad que a su vez contiene el link de su página
     const logoDiv = document.createElement('div');
+    logoDiv.classList.add('div_logo')
     //Crea el link
     const logoLink = document.createElement('a');
     //Se le agregan los atributos correspondientes.
@@ -99,8 +109,19 @@ document.addEventListener("DOMContentLoaded", function() {
     logoLink.appendChild(logoImg); //Agrega la imagen al link
     logoDiv.appendChild(logoLink); //Agrega el link con la imagen dentro del contenedor del logo
     infoUtn.appendChild(logoDiv); //Agrega todo ese contenedor del logo dentro del contenedor principal con la información de la UTN
-    
-    //Crea el contenedor donde van a  estar los links de las redes sociales de la UTN, y también la clase.
+
+    //Se crea el contenedir donde están los datos de la UTN y su respectiva clase.
+    const datosUtn = document.createElement('div');
+    datosUtn.classList.add('datos_utn');
+    //innerHTML para insertar directamente la estuctura de los parrafos con los aatos.
+    datosUtn.innerHTML = `
+        <p>Tecnicatura Universitaria en Programación</p>
+        <p>E. Zeballos 1372 PB - ROSARIO, SANTA FE</p>
+        <p>(0341) 448-1871/0102 - Int.: 106</p>
+        <p>posgrado@frro.utn.edu.ar</p>`;
+    infoUtn.appendChild(datosUtn); //Se agrega este contenedor con los datos al contendeor de la información
+    footer.appendChild(infoUtn); //Se agrega todo este contenedor con la informción de la UTN al footer
+
     const linksMd = document.createElement('div');
     linksMd.classList.add('links_md');
 
@@ -116,19 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
     linksMd.appendChild(mailLink);
     linksMd.appendChild(twitterLink);
 
-    infoUtn.appendChild(linksMd); //Se agrega el contenedor de los links al de la información.
-
-    //Se crea el contenedir donde están los datos de la UTN y su respectiva clase.
-    const datosUtn = document.createElement('div');
-    datosUtn.classList.add('datos_utn');
-    //innerHTML para insertar directamente la estuctura de los parrafos con los aatos.
-    datosUtn.innerHTML = `
-        <p>Tecnicatura Universitaria en Programación</p>
-        <p>E. Zeballos 1372 PB - ROSARIO, SANTA FE</p>
-        <p>(0341) 448-1871/0102 - Int.: 106</p>
-        <p>posgrado@frro.utn.edu.ar</p>`;
-    infoUtn.appendChild(datosUtn); //Se agrega este contenedor con los datos al contendeor de la información
-    footer.appendChild(infoUtn); //Se agrega todo este contenedor con la informción de la UTN al footer
+    footer.appendChild(linksMd);
 
     //Se crea el contenedor donde estan los integrantes del grupo y se le agrega su clase
     const grupoDiv = document.createElement('div');
@@ -142,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const grupoIntegrantes = document.createElement('ul');
     grupoIntegrantes.classList.add('grupo_integrantes');
     //Se definen los integrantes por medio de un array de strings.
-    const integrantes = ['Machuca Pablo', 'Mujica Lucas', 'Mello Federico', 'Tomaino Camila'];
+    const integrantes = ['Tomaino Camila','Mello Federico'];
     
     //Usamos la funciín foreach para recorrer el array y asignarle el nombre de cada integrante a los "li"
     integrantes.forEach(integrante => {
