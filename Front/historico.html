@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Historico</title>
   <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="CSS/styles_historico.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap"
@@ -15,10 +16,31 @@
 </head>
 
 <body>
-<main class="historico_container">
-  <h1>HOLA SOY UN HISTORICO</h1>
+<main>
+  <div class="historico_titulos_container">
+  <h1 class="titulo_historico">HISTORICO DE COTIZACIONES</h1>
+  <h3> Seleccione una fecha y el tipo de dolar que desea consultar</h3>
+  </div>
+  <form id="formulario_historico">
+    <label for="form" class="sub_form">Fecha</label>
+    <input id="fecha" type="date" required="">
+    <label for="form" class="sub_form">Tipo de dolar</label>
+    <select id="dolar" required="">
+      <option value="oficial">Oficial</option>
+      <option value="blue">Blue</option>
+      <option value="bolsa">Bolsa</option>
+      <option value="liquidacion">Contado con liquidacion</option>
+      <option value="mayorista">Mayorista</option>
+      <option value="cripto">Cripto</option>
+      <option value="tarjeta">Tarjeta</option>
+    </select>
+    <button type="submit" class="consultar">consultar</button>
+  </form>
+  </div>
+  <div class="resultado_form"></div>
 </main>
   <script src="JS/index.js"></script>
+  <script src="JS/Historico.js"></script>
 </body>
 
 </html>

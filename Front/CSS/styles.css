@@ -81,7 +81,9 @@ html {
 .cotizaciones_container{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 50px;
+    margin-top: 20px;
 }
 
 .cotizaciones {
@@ -92,6 +94,8 @@ html {
     border: 5px solid#131c28;
     background: #0F2027; 
     border-radius: 25px;
+    align-items: center;
+    align-content: center;
 }
 
 .cotizaciones_encabezado {
@@ -102,12 +106,16 @@ html {
 .cotizaciones_columnas  {
    color: #ebf5fb; 
    padding: 20px;
+   align-items: center;
+   align-content: center;
 }
 
 .cotizaciones_filas {
     color: #ebf5fb; 
     padding: 0.3em;
     background-color: #131c28;
+    align-items: center;
+    align-content: center;
 }
 
 .pie_de_pagina{
@@ -178,9 +186,6 @@ html {
 a {color: #ebf5fb;}
 
 /*Estilos de la página Historico*/
-.historico_container{
-    height: 100vh;
-}
 
 /*Estilos de la página de Contavto*/
 .contacto {
