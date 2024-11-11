@@ -16,37 +16,28 @@
 </head>
 
 <body>
-<main class="historico_container">
-  <div class="cotizaciones_titulo_container">
-  <h1 class="titulo_home">HISTORICO DE COTIZACIONES</h1>
+<main>
+  <div class="historico_titulos_container">
+  <h1 class="titulo_historico">HISTORICO DE COTIZACIONES</h1>
+  <h3> Seleccione una fecha y el tipo de dolar que desea consultar</h3>
   </div>
-  <h2 class="cotizaciones_subtitulo">Seleccione una fecha desde hasta para obtener su cotizacion</h2>
-  <div class="filtros">
-    <label for="fechaInicial" class="form-label">Fecha desde:</label>
-    <input type="date" class="form-control" id="fechaInicial"/>
+  <form id="formulario_historico">
+    <label for="form" class="sub_form">Fecha</label>
+    <input id="fecha" type="date" required="">
+    <label for="form" class="sub_form">Tipo de dolar</label>
+    <select id="dolar" required="">
+      <option value="oficial">Oficial</option>
+      <option value="blue">Blue</option>
+      <option value="bolsa">Bolsa</option>
+      <option value="liquidacion">Contado con liquidacion</option>
+      <option value="mayorista">Mayorista</option>
+      <option value="cripto">Cripto</option>
+      <option value="tarjeta">Tarjeta</option>
+    </select>
+    <button type="submit" class="consultar">consultar</button>
+  </form>
   </div>
-  <div class="filtros">
-    <label for="fechaFinal" class="form-label">Fecha hasta:</label>
-    <input type="date" class="form-control" id="fechaFinal"/>
-  </div>
-  <div class="filtros">
-    <button id="boton-filtrar">Buscar</button>
-  </div>
-  <div class="cotizaciones_container">
-  <table class="cotizaciones" id="tabla-cotizaciones" data-mostrar-fecha = "true">
-    <thead class="cotizaciones_encabezado">
-      <tr class="cotizaciones_encabezado">
-        <th class="cotizaciones_columnas">Dolar</th>
-        <th class="cotizaciones_columnas">Compra</th>
-        <th class="cotizaciones_columnas">Venta</th>
-        <th class="cotizaciones_columnas">Fecha Actualizacion</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-  </div>
-
+  <div class="resultado_form"></div>
 </main>
   <script src="JS/index.js"></script>
   <script src="JS/Historico.js"></script>
