@@ -1,52 +1,23 @@
-const form = document.getElementById("formulario_historico");
-const result = document.querySelector('.resultado_form')
+const DOLAR_API = "https://dolarapi.com/v1/dolares";
 
-form.addEventListener('submit', async function(event) {
-    event.preventDefault();
-
-    const fecha = document.getElementById('fecha').value;
-    const dolarTipo = document.getElementById('dolar').value;
-
-    if(!fecha || !dolarTipo){
-        result.innerHTML = '<p>Completar con todos los datos por favor</p>';
-        return;
-    }
-
-    const fechaFormateada = fecha.replace(/-/g, "/");
-    const nombresNuevos = {
-        blue: "Blue",
-        bolsa:"Bolsa",
-        contadoconliqui: "Liquidación",
-        oficial: "Oficial",
-        cripto: "cripto",
-        solidario:"Solidario",
-        mayorista:"Mayorista"
-    };
-
-    const nombreNuevo = nombresNuevos[dolarTipo] || dolarTipo;
-
-    console.log("fecha seleccionada", fechaFormateada);
-
-    let url =`https://api.argentinadatos.com/v1/cotizaciones/dolares/${dolarTipo}/${fechaFormateada}`;
-
-    console.log('URL:', url);
-
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('Error en la solicitud: ' + response.statusText);
-
-        const data = await response.json();
-        result.innerHTML = `
-            <div class="resultado_historico">
-                <h2>Dolar ${nombreNuevo} - ${fechaFormateada}</h2>
-                <hr/>
-                <p>Precio Compra: ${data.compra ?? 'N/A'}</p>
-                <p>Precio Venta: ${data.venta ?? 'N/A'}</p>
-            </div>
-        `;
-}   catch (error) {
-        console.error('Error:', error);
-        result.innerHTML = `<p>Error: ${error.message}</p>`;
+function obtenerDatos() {
+    fetch("DOLAR_API")
+        .then(response => response.json())  
+        .then(data => {
+            console.log(data);
+            return data;
+        })
+        .catch(error => {
+            console.error("Error EN LA OBTENCÓN DE LOS DATOS:", error);  
+        });
 }
 
-});
+function procesarDatso() {
+    obtenerDatos();
+    .then(data => {
+        const fechas = data.map(entry => entry.fechaActualizacion);  // Extrae fechas
+        const valoresOficial = data.map(entry => entry.oficial);  // Dólar oficial
+        const valoresBlue = data.map(entry => entry.blue);        // Dólar blue
+
+    })
+}
