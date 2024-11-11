@@ -1,0 +1,98 @@
+.contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.titulo_contacto_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    margin-bottom: 0.5em;
+}
+
+.titulo_contacto{
+    color: #ffffff;
+    font-size: 4.375em;
+    font-family: 'oswald';
+}
+
+.formulario_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 30em;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    width: 100%;
+    max-width: 400px;
+    padding: 1em;
+}
+
+.formulario label{
+    color: #ebf5fb;
+    margin-bottom: 5px;
+    margin-left: 0;
+}
+
+.nombre, .email {
+    box-sizing: border-box;
+    width: 20em;
+    height: 2em;
+    margin-bottom: 1em;
+    padding-left: 3px;
+    background-color: #131c28;
+    color: #dcd0d0;
+    border: 1px solid #dcd0d0;
+}
+
+.mensaje{
+    box-sizing: border-box;
+    width: 20em;
+    height: 5em;
+    padding-left: 3px;
+    margin-bottom: 1em;
+    color: #dcd0d0;
+    background-color: #131c28;
+    border: 1px solid #dcd0d0;
+}
+
+
+
+.nombre:hover, .email:hover, .mensaje:hover{
+    border:1px solid #08a1e8;
+}
+
+.nombre:focus, .email:focus, .mensaje:focus{
+    color: #ebf5fb;
+}
+
+.boton_enviar{
+    font-size: 1.2em;
+    margin-top: 9px;
+    padding: 10px 12px;
+    color: #ebf5fb;
+    background-color: #0674a7;
+    border: none;
+    border-radius: 0.4em;
+    transition: all 0.3s ease;
+}
+
+.boton_enviar:hover{
+    background-color: #034c6e;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
