@@ -198,7 +198,7 @@ a {color: #ebf5fb;}
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1b2838;
+    background-color: #131c28;
     margin-bottom: 5%;
     height: 90px;
     margin-inline: 85px;
@@ -211,7 +211,7 @@ a {color: #ebf5fb;}
     border-radius: 45px;
     font-family: 'oswald';
     color: white;
-    background-color: #1b2838;
+    background-color: #131c28;
     border-color: #2C5364;
     padding: 2%;
 }
@@ -222,7 +222,7 @@ a {color: #ebf5fb;}
     border-radius: 30px;
     width: 100px;
     font-family: 'oswald';
-    background-color: #1b2838;
+    background-color: #131c28;
     border-color: #2C5364;
     color: white;
 }
