@@ -47,6 +47,4 @@ form.addEventListener('submit', async function(event) { //Extraemos los valores 
 }   catch (error) {
         console.error('Error:', error);
         result.innerHTML = `<p>Error: ${error.message}</p>`;
-}
-
-});
+}});
