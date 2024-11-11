@@ -13,6 +13,17 @@ form.addEventListener('submit', async function(event) {
     }
 
     const fechaFormateada = fecha.replace(/-/g, "/");
+    const nombresNuevos = {
+        blue: "Blue",
+        bolsa:"Bolsa",
+        contadoconliqui: "Liquidación",
+        oficial: "Oficial",
+        cripto: "cripto",
+        solidario:"Solidario",
+        mayorista:"Mayorista"
+    };
+
+    const nombreNuevo = nombresNuevos[dolarTipo] || dolarTipo;
 
     console.log("fecha seleccionada", fechaFormateada);
 
@@ -27,7 +38,7 @@ form.addEventListener('submit', async function(event) {
         const data = await response.json();
         result.innerHTML = `
             <div class="resultado_historico">
-                <h2>Dolar ${dolarTipo.toUpperCase()} - ${fechaFormateada}</h2>
+                <h2>Dolar ${nombreNuevo} - ${fechaFormateada}</h2>
                 <hr/>
                 <p>Precio Compra: ${data.compra ?? 'N/A'}</p>
                 <p>Precio Venta: ${data.venta ?? 'N/A'}</p>
