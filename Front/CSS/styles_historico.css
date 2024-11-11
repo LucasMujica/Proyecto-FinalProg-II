@@ -1,0 +1,41 @@
+
+.cotizaciones_subtitulo{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    color: #ffffff;
+}
+h2 {
+    margin-bottom: 2%;
+}
+.filtros
+{
+    display: inline;
+    justify-content: space-around;
+    color: #ffffff;
+    padding-left: 15%;
+}
+.form-control{
+    color: white;
+    background-color: #1b2838;
+    border-radius: 10%;
+    font-family: 'oswald';
+    font-size: 20px;
+    border-style: none;
+    margin-left: 10px;
+}
+#boton-filtrar{
+    padding-inline: 10px;
+    color: white;
+    background-color: #1b2838;
+    font-size: 20px;
+    font-family: 'oswald';
+    border-radius: 10%;
+    border-style: none;
+    align-items: end;
+    padding-block: 5px;
+}
+#boton-filtrar:hover{
+    background-color:#0F2027 ;
+}

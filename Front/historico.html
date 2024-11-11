@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Historico</title>
   <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="CSS/styles_historico.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap"
@@ -16,9 +17,39 @@
 
 <body>
 <main class="historico_container">
-  <h1>HOLA SOY UN HISTORICO</h1>
+  <div class="cotizaciones_titulo_container">
+  <h1 class="titulo_home">HISTORICO DE COTIZACIONES</h1>
+  </div>
+  <h2 class="cotizaciones_subtitulo">Seleccione una fecha desde hasta para obtener su cotizacion</h2>
+  <div class="filtros">
+    <label for="fechaInicial" class="form-label">Fecha desde:</label>
+    <input type="date" class="form-control" id="fechaInicial"/>
+  </div>
+  <div class="filtros">
+    <label for="fechaFinal" class="form-label">Fecha hasta:</label>
+    <input type="date" class="form-control" id="fechaFinal"/>
+  </div>
+  <div class="filtros">
+    <button id="boton-filtrar">Buscar</button>
+  </div>
+  <div class="cotizaciones_container">
+  <table class="cotizaciones" id="tabla-cotizaciones" data-mostrar-fecha = "true">
+    <thead class="cotizaciones_encabezado">
+      <tr class="cotizaciones_encabezado">
+        <th class="cotizaciones_columnas">Dolar</th>
+        <th class="cotizaciones_columnas">Compra</th>
+        <th class="cotizaciones_columnas">Venta</th>
+        <th class="cotizaciones_columnas">Fecha Actualizacion</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  </div>
+
 </main>
   <script src="JS/index.js"></script>
+  <script src="JS/Historico.js"></script>
 </body>
 
 </html>
