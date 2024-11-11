@@ -1,7 +1,7 @@
-const form = document.getElementById("formulario_historico");
+const form = document.getElementById("formulario_historico"); //Traemos los datos
 const result = document.querySelector('.resultado_form')
 
-form.addEventListener('submit', async function(event) {
+form.addEventListener('submit', async function(event) { //Extraemos los valores del submit
     event.preventDefault();
 
     const fecha = document.getElementById('fecha').value;
