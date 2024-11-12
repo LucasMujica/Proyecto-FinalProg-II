@@ -11,18 +11,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="https://kit.fontawesome.com/93b9e172e2.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    
+
     <main class="contacto">
-      <section class="contacto_container">
         <div class="titulo_contacto_container">
-          <h2 class="titulo_contacto">CONTACTANOS AHORA</h2>
+          <h2 class="titulo_contacto">CONTACTANOS  AHORA</h2>
         </div>
         <div class="formulario_container">
-          <form class="formulario" action="xd">
+          <form id="formulario_contacto" class="formulario" action="/contacto" method="post">
           <label for="name">Nombre</label>
           <input type="text" id="name" name="user_name" class="nombre" required>
           <label for="mail">E-mail</label>
@@ -33,7 +33,6 @@
           <button type="submit" class="boton_enviar">Enviar</button>
         </form>
         </div>
-      </section>
     </main>
 
     <script src="JS/index.js"></script>
