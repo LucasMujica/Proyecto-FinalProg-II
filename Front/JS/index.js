@@ -9,6 +9,11 @@ nav.classList.add('menu_container');
 const logoContainer = document.createElement('div');
 logoContainer.classList.add('logo_container');
 
+const linkLogo = document.createElement('a');
+linkLogo.style.textDecoration = 'none';
+linkLogo.style.color = 'inherit';
+linkLogo.href = 'index.html';
+
 const logo = document.createElement('h1');
 logo.classList.add('logo');
 logo.textContent = 'Cotizaciones Cafe';
@@ -19,8 +24,8 @@ logoimg1.alt = 'Cotizaciones Cafe';
 logoimg1.classList.add('imagen_encabezado');
 
 logo.appendChild(logoimg1);
-
-logoContainer.appendChild(logo);
+linkLogo.appendChild(logo)
+logoContainer.appendChild(linkLogo);
 
 
 const ulMenu = document.createElement('ul');
