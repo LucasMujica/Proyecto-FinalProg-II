@@ -193,17 +193,6 @@ a {color: #ebf5fb;}
     flex-direction: column;
     align-items: center;
 }
-.formulario_div
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #131c28;
-    margin-bottom: 5%;
-    height: 90px;
-    margin-inline: 85px;
-    border-radius: 80px;
-}
 #mail{
     font-size: 30px;
     width: 87%;
@@ -215,7 +204,7 @@ a {color: #ebf5fb;}
     border-color: #2C5364;
     padding: 2%;
 }
-.enviar_cot{
+#enviar_cot{
     font-size: 25px;
     height: 60px;
     margin-left: 15px;
@@ -225,6 +214,16 @@ a {color: #ebf5fb;}
     background-color: #131c28;
     border-color: #2C5364;
     color: white;
+}
+#formulario_envio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #131c28;
+    margin-bottom: 5%;
+    height: 90px;
+    margin-inline: 85px;
+    border-radius: 80px;
 }
 /*CSS para panallas chicas (telefonos moviales)*/
 @media (max-width: 600px) {

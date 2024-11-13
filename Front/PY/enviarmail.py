@@ -1,36 +1,56 @@
+from flask import Flask, jsonify, request, render_template
+from flask_cors import CORS
 import requests
-import json                                        
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
-data = {
-    'service_id': 'service_xxxxxxx',
-    'template_id': 'template_xxxxxxx',
-    'user_id': 'xxxxxxxxxxxxxxxxx',
-    'accessToken': 'xx-xxxx-xxxxxxxxxxxxx',
-    'template_params': {
-        'from_name': 'James',
-        'to_name': 'Seba',
-        'message': 'Este es el mensaje'
-    }
-}
+app = Flask(__name__)
+CORS(app)
 
-headers = {
-    'Content-Type': 'application/json',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36',
-    'Accept': 'application/json, text/javascript, */*; q=0.01',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Origin': 'https://your-website.com',  
-    'Referer': 'https://your-website.com/'
-}
+# Endpoint para enviar la cotización por correo
+@app.route('/enviar-cotizacion', methods=["POST"])
+def enviar_cotizacion():
+    data = request.get_json()
+    email = data.get("email")
+    if not email:
+        return jsonify({"error": "Email es requerido"}), 400
 
-try:
-    response = requests.post(
-        'https://api.emailjs.com/api/v1.0/email/send',
-        data=json.dumps(data),
-        headers=headers
-    )
-    response.raise_for_status()
-    print('Your mail is sent!')
-except requests.exceptions.RequestException as error:
-    print(f'Oops... {error}')
-    if error.response is not None:
-        print(error.response.text)
+    # API de cotizaciones del dólar
+    api_url = "https://dolarapi.com/v1/dolares"
+    response = requests.get(api_url)
+
+    if response.status_code == 200:
+        cotizaciones = response.json()
+        cuerpo_html = "<h1>Valor del Dólar Hoy</h1><ul>"
+        for item in cotizaciones:
+            cuerpo_html += f"<li><strong>Casa:</strong> {item['casa']}, <strong>Compra:</strong> {item['compra']}, <strong>Venta:</strong> {item['venta']}</li>"
+        cuerpo_html += "</ul>"
+
+        enviar_correo(email, "Cotización del Dólar Hoy", cuerpo_html)
+        return jsonify({"message": "MAIL ENVIADO CON EXTIO"}), 200
+    else:
+        return jsonify({"error": "Error al obtener datos de la API"}), 500
+
+def enviar_correo(destinatario, asunto, cuerpo_html):
+    remitente = "cafecotizaciones@gmail.com"
+    contraseña = "makn muqw piaq ofjz "  # Ponla en una variable de entorno para mayor seguridad
+
+    msg = MIMEMultipart()
+    msg['From'] = remitente
+    msg['To'] = destinatario
+    msg['Subject'] = asunto
+    msg.attach(MIMEText(cuerpo_html, 'html'))
+
+    try:
+        servidor = smtplib.SMTP('smtp.gmail.com', 587)
+        servidor.starttls()
+        servidor.login(remitente, contraseña)
+        servidor.sendmail(remitente, destinatario, msg.as_string())
+        servidor.quit()
+        print("Correo enviado con éxito")
+    except Exception as e:
+        print(f"Error al enviar el correo: {e}")
+
+if __name__ == '__main__':
+    app.run(debug=True)
