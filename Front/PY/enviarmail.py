@@ -33,6 +33,7 @@ def enviar_cotizacion():
     else:
         return jsonify({"error": "Error al obtener datos de la API"}), 500
 
+
 def enviar_correo(destinatario, asunto, cuerpo_html):
     remitente = "cafecotizaciones@gmail.com"
     contraseña = "makn muqw piaq ofjz " 
@@ -54,4 +55,4 @@ def enviar_correo(destinatario, asunto, cuerpo_html):
         print(f"Error al enviar el correo: {e}")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True)     
