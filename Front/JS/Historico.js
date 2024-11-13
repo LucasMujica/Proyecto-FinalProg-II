@@ -7,11 +7,6 @@ form.addEventListener('submit', async function(event) { //Extraemos los valores 
     const fecha = document.getElementById('fecha').value;
     const dolarTipo = document.getElementById('dolar').value;
 
-    if(!fecha || !dolarTipo){
-        result.innerHTML = '<p>Completar con todos los datos por favor</p>';
-        return;
-    }
-
     const fechaFormateada = fecha.replace(/-/g, "/");
     const nombresNuevos = {
         blue: "Blue",
