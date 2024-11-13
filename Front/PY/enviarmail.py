@@ -1,5 +1,5 @@
 
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 import requests
 import smtplib
@@ -9,7 +9,7 @@ from email.mime.text import MIMEText
 app = Flask(__name__)
 CORS(app)
 
-# Endpoint para enviar la cotización por correo
+
 @app.route('/enviar-cotizacion', methods=["POST"])
 def enviar_cotizacion():
     data = request.get_json()
@@ -17,7 +17,7 @@ def enviar_cotizacion():
     if not email:
         return jsonify({"error": "Email es requerido"}), 400
 
-    # API de cotizaciones del dólar
+    
     api_url = "https://dolarapi.com/v1/dolares"
     response = requests.get(api_url)
 
@@ -35,7 +35,7 @@ def enviar_cotizacion():
 
 def enviar_correo(destinatario, asunto, cuerpo_html):
     remitente = "cafecotizaciones@gmail.com"
-    contraseña = "makn muqw piaq ofjz "  # Ponla en una variable de entorno para mayor seguridad
+    contraseña = "makn muqw piaq ofjz " 
 
     msg = MIMEMultipart()
     msg['From'] = remitente
