@@ -53,6 +53,5 @@ def enviar_correo(destinatario, asunto, cuerpo_html):
     except Exception as e:
         print(f"Error al enviar el correo: {e}")
 
-   
 if __name__ == '__main__':
     app.run(debug=True)     
