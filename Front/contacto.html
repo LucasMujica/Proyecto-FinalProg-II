@@ -13,6 +13,11 @@
     rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="https://kit.fontawesome.com/93b9e172e2.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+    emailjs.init('tzHLC3iMKw7uVm_2X')
+    </script>
   </head>
 
   <body>
@@ -24,11 +29,11 @@
         <div class="formulario_container">
           <form id="formulario_contacto" class="formulario" action="/contacto" method="POST">
           <label for="name">Nombre</label>
-          <input type="text" id="name" name="user_name" class="nombre" required>
+          <input type="text" id="from_name" name="from_name" class="nombre" required>
           <label for="mail">E-mail</label>
-          <input type="mail" id="mail_contacto" name="user_mail" class="email" required placeholder="email@dominio.com">
+          <input type="mail" id="email_id" name="email_id" class="email" required placeholder="email@dominio.com">
           <label for="msg">Mensaje</label>
-          <textarea name="user_message" id="msg" class="mensaje" required
+          <textarea name="message" id="message" class="mensaje" required
             placeholder="Escribí un mensaje..."></textarea>
           <button type="submit" class="boton_enviar">Enviar</button>
         </form>
