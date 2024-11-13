@@ -15,7 +15,7 @@ def contacto():
 data = {
     'service_id': 'service_62iulep',
     'template_id': 'template_ho28gyz',
-    'public_key': 'S86izrLtSu8K2JpDz',                                                                                   
+    'public_key': 'S86izrLtSu8K2JpDz',                                                                   
     'template_params': {
         'from_name': nombre,
         'from_email': email,
