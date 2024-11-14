@@ -90,3 +90,57 @@
     cursor: pointer;
 }
 
+/*CSS para panallas chicas (telefonos moviales)*/
+@media (max-width: 768px) {
+    .titulo_contacto {
+        font-size: 2em;
+        text-wrap: wrap;
+        padding: 2%;
+        word-spacing: 0.1em;
+    }
+
+    .formulario_container {
+        max-width: 100%; 
+        margin-bottom: 2em;
+    }
+
+    .formulario {
+        margin-inline: 5%; 
+        padding: 1em;
+        max-width: 90%; 
+    }
+
+    .nombre, .email, .mensaje {
+        height: 2em; 
+        padding: 0.5em; 
+    }
+
+    .mensaje {
+        height: 4em; 
+    }
+
+    .boton_enviar {
+        font-size: 1em; 
+        padding: 8px 10px; 
+    }
+}
+
+/*CSS para pantallas medianas (tablets)*/
+@media (max-width: 1024px) {
+    .titulo_contacto {
+        font-size: 3em; 
+    }
+
+    .formulario_container {
+        max-width: 80%; 
+    }
+
+    .formulario {
+        margin-inline: 10%; 
+        max-width: 80%; 
+    }
+
+    .boton_enviar {
+        font-size: 1.1em; 
+    }
+}

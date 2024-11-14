@@ -93,3 +93,57 @@ h3{
     font-size: 20px;
     padding: 2%;
 }
+
+/*CSS para panallas chicas (telefonos moviales)*/
+@media (max-width: 768px) {
+    .titulo_historico {
+        font-size: 2em; 
+        padding: 2%;
+    }
+
+    h3 {
+        font-size: 1.5em;
+        margin-left: 0.5em;
+    }
+
+    #formulario_historico {
+        margin-inline: 10%; 
+        margin-bottom: 8%;
+        padding: 1em;
+        padding-top: 0.7em;
+    }
+
+    .consultar {
+        font-size: 20px; 
+        padding: 2%; 
+    }    
+
+    #fecha, #dolar {
+        width: 100%;
+    }
+
+    .resultado_historico {
+        margin-inline: 5%; 
+        border-radius: 1em; 
+    }
+
+    .resultado_historico h2 {
+        font-size: 1.5em; 
+    }
+}
+
+/*CSS para pantallas medianas (tablets)*/
+@media (max-width: 1024px) {
+    .titulo_historico {
+        font-size: 3em;
+    }
+
+    .consultar {
+        font-size: 22px;
+        padding: 2.5%;
+    }
+
+    #formulario_historico {
+        margin-inline: 20%;
+    }
+}

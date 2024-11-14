@@ -248,17 +248,27 @@ a {color: #ebf5fb;}
     font-size: 30px;
     font-family: 'oswald';
 }
+
 /*CSS para panallas chicas (telefonos moviales)*/
 @media (max-width: 600px) {
     .menu_container {
+        display: flex; 
         flex-direction: column;
         padding: 10px;
         margin-bottom: 15px;
+        align-items: center;
+    }
+
+    .menu_items {
+        width: 100%; 
+        padding: 8px;
+        text-align: center; 
     }
 
     .cotizaciones {
-        width: 100%;
-        border-radius: 15px;
+        width: 90%; 
+        margin: 0 auto; 
+        border-radius: 10px;
     }
 
     #formulario_envio {
@@ -282,19 +292,20 @@ a {color: #ebf5fb;}
 /*CSS para pantallas medianas (tablets)*/
 @media (min-width: 601px) and (max-width: 1024px) {
     .menu_container {
-        padding: 20px;
         justify-content: center;
+        padding: 20px;
         margin-bottom: 20px;
+        flex-direction: row;
     }
 
     .menu_items {
-        margin: 0 15px;
+        margin: 10px; 
+        text-align: center; 
     }
 
     .cotizaciones {
-        max-width: 100%;
-        margin-left: 1em;
-        margin-right: 1em;
+        max-width: 95%; 
+        margin: 0 auto; 
     }
 
     #formulario_envio {
