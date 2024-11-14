@@ -293,6 +293,8 @@ a {color: #ebf5fb;}
 
     .cotizaciones {
         max-width: 100%;
+        margin-left: 1em;
+        margin-right: 1em;
     }
 
     #formulario_envio {
