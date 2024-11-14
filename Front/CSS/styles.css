@@ -8,6 +8,8 @@ html {
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
     background-repeat: no-repeat;
     box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 *, *::before, *::after{
@@ -248,15 +250,64 @@ a {color: #ebf5fb;}
 }
 /*CSS para panallas chicas (telefonos moviales)*/
 @media (max-width: 600px) {
-    body {
-        font-size: 14px;
+    .menu_container {
+        flex-direction: column;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .cotizaciones {
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    #formulario_envio {
+        margin-inline: 20px;
+        height: auto;
+        border-radius: 20px;
+    }
+
+    .subtitulo {
+        font-size: 20px;
+        margin: 2%;
+    }
+
+    .pie_de_pagina {
+        flex-direction: column;
+        padding: 10px;
+        margin-top: 15px;
     }
 }
 
 /*CSS para pantallas medianas (tablets)*/
 @media (min-width: 601px) and (max-width: 1024px) {
-    body {
-        font-size: 16px;
+    .menu_container {
+        padding: 20px;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .menu_items {
+        margin: 0 15px;
+    }
+
+    .cotizaciones {
+        max-width: 100%;
+    }
+
+    #formulario_envio {
+        margin-inline: 50px;
+        border-radius: 50px;
+    }
+
+    .subtitulo {
+        font-size: 25px;
+        margin: 2.5%;
+    }
+
+    .pie_de_pagina {
+        padding: 20px;
+        margin-top: 20px;
     }
 }
 
