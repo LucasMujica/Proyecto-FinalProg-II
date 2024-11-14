@@ -23,12 +23,12 @@ def enviar_cotizacion():
 
     if response.status_code == 200:
         cotizaciones = response.json()
-        cuerpo_html = "<h1>Valor del Dólar Hoy</h1><ul>"
+        cuerpo_html = "<h1>Valor del Dólar</h1><ul>"
         for item in cotizaciones:
-            cuerpo_html += f"<li><strong>Casa:</strong> {item['casa']}, <strong>Compra:</strong> {item['compra']}, <strong>Venta:</strong> {item['venta']}</li>"
+            cuerpo_html += f"<li><strong>TIPO:</strong> {item['casa']}, <strong>COMPRA:</strong> {item['compra']}, <strong>VENTA:</strong> {item['venta']}</li>"
         cuerpo_html += "</ul>"
 
-        enviar_correo(email, "Cotización del Dólar Hoy", cuerpo_html)
+        enviar_correo(email, "Cotización Actual del dolar", cuerpo_html)
         return jsonify({"message": "MAIL ENVIADO CON EXTIO"}), 200
     else:
         return jsonify({"error": "Error al obtener datos de la API"}), 500
