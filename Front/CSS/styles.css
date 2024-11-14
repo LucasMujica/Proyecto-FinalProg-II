@@ -96,8 +96,13 @@ html {
     border-radius: 25px;
     align-items: center;
     align-content: center;
+    transition: all 0.3s ease;
 }
-
+.cotizaciones:hover{
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    cursor: pointer;
+}
 .cotizaciones_encabezado {
     padding: 10px;
     background-color: #131c28;
@@ -214,6 +219,13 @@ a {color: #ebf5fb;}
     background-color: #131c28;
     border-color: #2C5364;
     color: white;
+    transition: all 0.3s ease 
+}
+#enviar_cot:hover{
+    background-color: #034c6e;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+    cursor: pointer;
 }
 #formulario_envio{
     display: flex;
@@ -224,6 +236,15 @@ a {color: #ebf5fb;}
     height: 90px;
     margin-inline: 85px;
     border-radius: 80px;
+}
+.subtitulo
+{
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin: 3%;
+    font-size: 30px;
+    font-family: 'oswald';
 }
 /*CSS para panallas chicas (telefonos moviales)*/
 @media (max-width: 600px) {

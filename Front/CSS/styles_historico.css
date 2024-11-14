@@ -25,7 +25,14 @@ h3{
     margin-bottom: 5%;
     margin-top: 5%;
     margin-inline: 30%;
-    border-radius: 6%;
+    border-radius: 0.5em;
+    transition: all 0.3s ease;
+ }
+
+#formulario_historico:hover{
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+    cursor: pointer;
 }
 
 .sub_form{
@@ -37,11 +44,18 @@ h3{
     background-color: #2C5364;
     padding: 3%;
     margin: 3%;
-    border-radius: 20%;
+    border-radius: 15px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
     color: white;
     border: none;
+    transition: all 0.3s ease  
+}
+.consultar:hover{
+    background-color: #034c6e;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+    cursor: pointer;
 }
 #fecha{
    font-size: 20px;
