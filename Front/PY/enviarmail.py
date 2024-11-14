@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route('/enviar-cotizacion', methods=["POST"])
+@app.route('/envioDeCotizacion', methods=["POST"])
 def enviar_cotizacion():
     data = request.get_json()
     email = data.get("email")
@@ -35,14 +35,17 @@ def enviar_cotizacion():
 
 
 def enviar_correo(destinatario, asunto, cuerpo_html):
+    print("Iniciando envio de correo....")
     remitente = "cafecotizaciones@gmail.com"
-    contraseña = "makn muqw piaq ofjz " 
+    contraseña = "makn muqw piaq ofjz" 
 
     msg = MIMEMultipart()
     msg['From'] = remitente
     msg['To'] = destinatario
     msg['Subject'] = asunto
     msg.attach(MIMEText(cuerpo_html, 'html'))
+
+    print(msg.as_string())
 
     try:
         servidor = smtplib.SMTP('smtp.gmail.com', 587)

@@ -1,38 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const formulario = document.getElementById("formulario_envio");
+document.getElementById('formulario_envio').addEventListener('submit', (event) => {
+    event.preventDefault(); 
 
-    formulario.addEventListener("submit", async (e) => {
-        e.preventDefault();
+    const emailInput = document.getElementById("mail");
+    const email = emailInput.value;
 
-        const emailInput= document.getElementById("mail");
-        const email = emailInput.value;
-
-        console.log(email);
-        
-        if (!email) {
-            alert("Por favor ingrese un correo electrónico válido.");
-            return;
+    fetch("http://127.0.0.1:5000/envioDeCotizacion", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message) {
+            alert(data.message);
+            emailInput.value='';
+        } else {
+            alert('Hubo un error al enviar el mensaje.');
         }
-
-        try {
-            const response = await fetch("http://127.0.0.1:5000/enviar-cotizacion", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ email }),
-            });
-
-            const result = await response.json();
-            if (response.ok) {
-                alert(result.message); 
-                emailInput.value ="";
-            } else {
-                alert(result.error || "Error al enviar el correo.");
-            }
-        } catch (error) {
-            console.error("Error al enviar la solicitud:", error);
-            alert("Hubo un problema al enviar la solicitud. Intente nuevamente.");
-        }
+    })
+    .catch(error => {
+        console.error('Error al intentar conectar con el servidor:', error);
+        alert('Error en el servidor: ' + error.message);
     });
 });
