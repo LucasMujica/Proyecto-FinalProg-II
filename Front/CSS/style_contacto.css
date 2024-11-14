@@ -54,7 +54,8 @@
     height: 2em;
     margin-bottom: 1em;
     padding-left: 3px;
-    background-color:  #dcd0d0;
+    color:#000101;
+    background-color:  #ffffff;
     border: 1px solid #131c28;
     border-radius: 0.4em;
 }
@@ -65,7 +66,8 @@
     height: 5em;
     padding-left: 3px;
     margin-bottom: 1em;
-    background-color: #dcd0d0;
+    background-color: #ffffff;
+    color:#000101;
     border: 1px solid #131c28;
     border-radius: 0.4em;
 }
@@ -75,7 +77,7 @@
 }
 
 .nombre:focus, .email:focus, .mensaje:focus{
-    color: #ebf5fb;
+    color: #000101;
 }
 
 .boton_enviar{
