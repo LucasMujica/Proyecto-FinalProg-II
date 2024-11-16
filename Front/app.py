@@ -19,7 +19,7 @@ class ServicioCorreo:
         msg = MIMEMultipart()
         msg['From'] = self.correo_remitente
         msg['To'] = destinatario
-        msg['asunto'] = asunto
+        msg['subject'] = asunto
         msg.attach(MIMEText(cuerpo_html, 'html'))
 
         try:
