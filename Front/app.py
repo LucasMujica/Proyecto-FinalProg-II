@@ -1,57 +1,127 @@
-from flask import Flask, request, jsonify #Impota Flask y los mdulos que se van a utilizar
-from flask_cors import CORS #Importa cors que sirve para reCibir soLicitudes de dominios externo
-import requests #Importa request
-import json  #Importa JSON qe permite convertur Pyhon a Json y viceversa  
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+import requests
+import json
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
-#Crea una insancia de aplicacion de Flask
-app = Flask(__name__)
-CORS(app)  #Habilita CORS
 
-#Define la ruta y el metodo
-@app.route('/contacto', methods=['POST'])
-def contacto(): #Declara la funcion que se va a usar cuando se le haga la solicitud a la ruta
-    try: #Toma los datos del formulario HTML
-        nombre = request.form.get('from_name')
-        email = request.form.get('email_id')
-        mensaje = request.form.get('message')
-        
-        print(f"Nombre: {nombre}, Correo: {email}, Mensaje: {mensaje}")
+class EmailService:
+    def __init__(self, smtp_server, smtp_port, sender_email, password):
+        self.smtp_server = smtp_server
+        self.smtp_port = smtp_port
+        self.sender_email = sender_email
+        self.password = password
 
-        #Configuracion de los datos de la API
-        data = { #Diccionario que contiene los datos necesarios para enviar un correo con EmailJS
-            'service_id': 'service_62iulep', #identificador del servicio
-            'template_id': 'template_ho28gyz', #Identificador de la plantilla
-            'user_id': 'XxW6YCMvJGkR4Ub6N', #identficador de usuario
-            'accessToken': 'b8JFJInRloOPmMKszaGPy', #clva de acceso
-            'template_params': { #paramtros especificos de la planttilla
+    def send_email(self, recipient, subject, html_content):
+        print("Iniciando envío de correo...")
+        msg = MIMEMultipart()
+        msg['From'] = self.sender_email
+        msg['To'] = recipient
+        msg['Subject'] = subject
+        msg.attach(MIMEText(html_content, 'html'))
+
+        try:
+            with smtplib.SMTP(self.smtp_server, self.smtp_port) as server:
+                server.starttls()
+                server.login(self.sender_email, self.password)
+                server.sendmail(self.sender_email, recipient, msg.as_string())
+            print("Correo enviado con éxito")
+        except Exception as e:
+            print(f"Error al enviar el correo: {e}")
+            raise
+
+
+class CotizacionService:
+    def __init__(self, api_url, email_service):
+        self.api_url = api_url
+        self.email_service = email_service
+
+    def obtener_cotizaciones(self):
+        response = requests.get(self.api_url)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            raise Exception("Error al obtener datos de la API")
+
+    def enviar_cotizacion(self, email):
+        cotizaciones = self.obtener_cotizaciones()
+        cuerpo_html = "<h1>Valor del Dólar</h1><ul>"
+        for item in cotizaciones:
+            cuerpo_html += f"<li><strong>TIPO:</strong> {item['casa']}, <strong>COMPRA:</strong> {item['compra']}, <strong>VENTA:</strong> {item['venta']}</li>"
+        cuerpo_html += "</ul>"
+        self.email_service.send_email(email, "Cotización Actual del dólar", cuerpo_html)
+
+
+class ContactoService:
+    def __init__(self, email_service, emailjs_config):
+        self.email_service = email_service
+        self.emailjs_config = emailjs_config
+
+    def enviar_contacto(self, nombre, email, mensaje):
+        data = {
+            'service_id': self.emailjs_config['service_id'],
+            'template_id': self.emailjs_config['template_id'],
+            'user_id': self.emailjs_config['user_id'],
+            'accessToken': self.emailjs_config['accessToken'],
+            'template_params': {
                 'from_name': nombre,
                 'email_id': email,
                 'message': mensaje
             }
         }
-
-        #Definicion de los encabezados
-        headers = {
-            'Content-Type': 'application/json', #Define que el contenido de la solicitud va a ser en Json
-        }
-
-        #
-        response = requests.post( #ealiza una solicitud POST a la urL de la API para enviar el correo.
+        headers = {'Content-Type': 'application/json'}
+        response = requests.post(
             'https://api.emailjs.com/api/v1.0/email/send',
-            data=json.dumps(data), #Convierte el diccionario data a JSON
-            headers=headers #Incluye los encabezados que definimos antes
+            data=json.dumps(data),
+            headers=headers
         )
-        
-        print("Estado de la respuesta de EmailJS:", response.status_code)
-        print("Contenido de la respuesta de EmailJS:", response.text)
-        
-        response.raise_for_status() #Tira una excepcion si la solicitud falla (codio de estado)
+        response.raise_for_status()
 
-        return jsonify({'message': 'Correo enviado correctamente'}), 200 #Responde al cliente con un objeto JSON diciendo que el correo se  envio correctamente, junto con un código de estado 200 (OK).
 
-    except requests.exceptions.RequestException as e:
-        print(f"Error al enviar el correo: {e}")
-        return jsonify({'error': f'Error al enviar el correo: {str(e)}'}), 500 #Captura cualquier excepción lamzada al hacer la solicitud y responde con un error JSON y un código de estado 500(Error interno del servidor)..
+# Configuración de la aplicación Flask
+class FlaskApp:
+    def __init__(self):
+        self.app = Flask(__name__)
+        CORS(self.app)
+        self.email_service = EmailService('smtp.gmail.com', 587, 'cafecotizaciones@gmail.com', 'makn muqw piaq ofjz')
+        self.cotizacion_service = CotizacionService("https://dolarapi.com/v1/dolares", self.email_service)
+        self.contacto_service = ContactoService(self.email_service, {
+            'service_id': 'service_62iulep',
+            'template_id': 'template_ho28gyz',
+            'user_id': 'XxW6YCMvJGkR4Ub6N',
+            'accessToken': 'b8JFJInRloOPmMKszaGPy'
+        })
+        self.setup_routes()
 
-if __name__ == '__main__': # Verifica que el script se está ejecutando directamente
-    app.run(debug=True) #Aplicacion en modo debugger
+    def setup_routes(self):
+        @self.app.route('/contacto', methods=['POST'])
+        def contacto():
+            try:
+                nombre = request.form.get('from_name')
+                email = request.form.get('email_id')
+                mensaje = request.form.get('message')
+                self.contacto_service.enviar_contacto(nombre, email, mensaje)
+                return jsonify({'message': 'Correo enviado correctamente'}), 200
+            except Exception as e:
+                return jsonify({'error': str(e)}), 500
+
+        @self.app.route('/envioDeCotizacion', methods=["POST"])
+        def envio_de_cotizacion():
+            try:
+                data = request.get_json()
+                email = data.get("email")
+                if not email:
+                    return jsonify({"error": "Email es requerido"}), 400
+                self.cotizacion_service.enviar_cotizacion(email)
+                return jsonify({"message": "Mail enviado con éxito"}), 200
+            except Exception as e:
+                return jsonify({'error': str(e)}), 500
+
+    def run(self):
+        self.app.run(debug=True)
+
+
+if __name__ == '__main__':
+    FlaskApp().run()
